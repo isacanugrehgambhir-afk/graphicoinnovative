@@ -545,6 +545,14 @@
     .nav .brand img { width:130px; height:130px; max-height:none; }
     @media (max-width:900px) { .nav { height:120px; } .nav .brand img { width:112px; height:112px; } }
     @media (max-width:680px) { .nav { height:108px; } .nav .brand img { width:100px; height:100px; } .navlinks { top:108px; } }
+
+    /* Compact the sticky header after the visitor starts scrolling */
+    header, .nav, .nav .brand img, .navlinks { transition: height .28s ease, padding .28s ease, top .28s ease, width .28s ease; }
+    header.compact .nav { height:88px; }
+    header.compact .nav .brand img { width:84px; height:84px; }
+    @media (max-width:900px) { header.compact .nav { height:78px; } header.compact .nav .brand img { width:72px; height:72px; } }
+    @media (max-width:680px) { header.compact .nav { height:68px; } header.compact .nav .brand img { width:62px; height:62px; } header.compact .navlinks { top:68px; } }
+    @media (prefers-reduced-motion: reduce) { header, .nav, .nav .brand img, .navlinks { transition:none!important; } }
     </style>
 </head>
 <body>
@@ -716,6 +724,7 @@
     const updateProgress = () => {
       const range = document.documentElement.scrollHeight - window.innerHeight;
       progress.style.width = `${range > 0 ? (window.scrollY / range) * 100 : 0}%`;
+      document.querySelector('header').classList.toggle('compact', window.scrollY > 80);
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const heroBounds = document.querySelector('.hero-image-wrap').getBoundingClientRect();
         if (heroBounds.bottom > 0 && heroBounds.top < window.innerHeight) {
