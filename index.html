@@ -148,7 +148,9 @@
     .quote .eyebrow { color:var(--ink); }
     .quote h2 { margin:15px 0 16px; font:600 clamp(40px,5vw,64px)/1 'Manrope'; letter-spacing:-.075em; }
     .quote-intro { max-width:620px; font-size:14px; line-height:1.7; color:rgba(32,45,57,.75); }
-    .quote-form-link { margin-top:6px; }
+    .quote-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:6px; }
+    .whatsapp-button { background:#247a43; }
+    .whatsapp-button:hover { background:#1d6537; }
     .quote-points { margin-top:27px; padding-top:20px; border-top:1px solid rgba(32,45,57,.22); font:10px/1.8 'DM Mono',monospace; text-transform:uppercase; }
     form { padding:30px; border-radius:var(--radius); background:var(--paper); display:grid; grid-template-columns:1fr 1fr; gap:17px; }
     .field { display:flex; flex-direction:column; gap:7px; }
@@ -663,7 +665,10 @@
     </section>
     <section class="quote" id="quote">
       <div class="wrap quote-grid">
-        <div class="reveal"><div class="eyebrow">Your project starts here</div><h2>Tell us what you’re imagining.</h2><p class="quote-intro">A few useful details help us understand the idea. If you’re still working them out, share what you know and we’ll help shape the brief.</p><a class="button quote-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfiug1CXpJXtdxkWxHqR-E5c-WjMpgCQTZlr8ZLxQLPE94l2Q/viewform" target="_blank" rel="noopener">Fill out the enquiry form <span>↗</span></a><div class="quote-points">Individuals welcome / Organisations welcome<br>Delhi-NCR / Quote before production</div></div>
+        <div class="reveal"><div class="eyebrow">Your project starts here</div><h2>Tell us what you’re imagining.</h2><p class="quote-intro">A few useful details help us understand the idea. If you’re still working them out, share what you know and we’ll help shape the brief.</p><div class="quote-actions">
+          <a class="button quote-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfiug1CXpJXtdxkWxHqR-E5c-WjMpgCQTZlr8ZLxQLPE94l2Q/viewform" target="_blank" rel="noopener">Fill out the enquiry form <span>↗</span></a>
+          <a class="button whatsapp-button" href="https://wa.me/918512817728?text=Hello%20Graphico%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">Chat on WhatsApp <span>↗</span></a>
+        </div><div class="quote-points">Individuals welcome / Organisations welcome<br>Delhi-NCR / Quote before production</div></div>
       </div>
     </section>
   </main>
