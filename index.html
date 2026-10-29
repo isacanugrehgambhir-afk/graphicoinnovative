@@ -108,9 +108,12 @@
     .service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
     .service-card { min-height:250px; padding:24px; border:1px solid var(--line); border-radius:var(--radius); display:flex; flex-direction:column; transition:transform .2s, box-shadow .2s; background:#fbfaf6; }
     .service-card:hover { transform:translateY(-4px); box-shadow:0 16px 35px rgba(32,45,57,.08); }
+    .service-card:nth-child(1) { background:#f4ddd0; border-color:#f4ddd0; }
     .service-card:nth-child(2) { background:#f3d782; border-color:#f3d782; }
+    .service-card:nth-child(3) { background:#dfe8eb; border-color:#dfe8eb; }
     .service-card:nth-child(4) { background:#e5ece5; border-color:#e5ece5; }
     .service-card:nth-child(5) { background:#f0ddd4; border-color:#f0ddd4; }
+    .service-card:nth-child(6) { background:#f8e5bf; border-color:#f8e5bf; }
     .card-top { display:flex; justify-content:space-between; align-items:center; font:10px 'DM Mono',monospace; color:var(--muted); }
     .card-icon { width:42px; height:42px; display:grid; place-items:center; border:1px solid rgba(32,45,57,.18); border-radius:50%; font-size:18px; color:var(--red); }
     .service-card h3 { margin:25px 0 8px; font:700 19px 'Manrope'; letter-spacing:-.04em; }
