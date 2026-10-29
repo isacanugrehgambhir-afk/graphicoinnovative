@@ -144,10 +144,11 @@
     .step p { max-width:235px; color:var(--muted); font-size:12px; line-height:1.65; }
 
     .quote { background:var(--orange); }
-    .quote-grid { display:grid; grid-template-columns:.75fr 1.25fr; gap:60px; align-items:start; }
+    .quote-grid { display:grid; grid-template-columns:1fr; gap:30px; align-items:start; }
     .quote .eyebrow { color:var(--ink); }
     .quote h2 { margin:15px 0 16px; font:600 clamp(40px,5vw,64px)/1 'Manrope'; letter-spacing:-.075em; }
-    .quote-intro { max-width:340px; font-size:14px; line-height:1.7; color:rgba(32,45,57,.75); }
+    .quote-intro { max-width:620px; font-size:14px; line-height:1.7; color:rgba(32,45,57,.75); }
+    .quote-form-link { margin-top:6px; }
     .quote-points { margin-top:27px; padding-top:20px; border-top:1px solid rgba(32,45,57,.22); font:10px/1.8 'DM Mono',monospace; text-transform:uppercase; }
     form { padding:30px; border-radius:var(--radius); background:var(--paper); display:grid; grid-template-columns:1fr 1fr; gap:17px; }
     .field { display:flex; flex-direction:column; gap:7px; }
@@ -533,8 +534,6 @@
     .quote .consent-field input { flex:0 0 18px; width:18px; min-height:18px; height:18px; margin:2px 0 0; padding:0; accent-color:#f7c975; }
     .quote .consent-field a { color:#f7c975; text-decoration:underline; text-underline-offset:3px; }
 
-    .google-form-frame { display:block; width:100%; height:1450px; border:0; border-radius:22px; background:#fff; }
-    @media (max-width:680px) { .google-form-frame { height:1650px; } }
     </style>
 </head>
 <body>
@@ -664,11 +663,7 @@
     </section>
     <section class="quote" id="quote">
       <div class="wrap quote-grid">
-        <div class="reveal"><div class="eyebrow">Your project starts here</div><h2>Tell us what you’re imagining.</h2><p class="quote-intro">A few useful details help us understand the idea. If you’re still working them out, share what you know and we’ll help shape the brief.</p><div class="quote-points">Individuals welcome / Organisations welcome<br>Delhi-NCR / Quote before production</div></div>
-        <div class="google-form-embed">
-          <iframe class="google-form-frame" title="Graphico Innovative Advertising Enquiry Form" src="https://docs.google.com/forms/d/e/1FAIpQLSfiug1CXpJXtdxkWxHqR-E5c-WjMpgCQTZlr8ZLxQLPE94l2Q/viewform?embedded=true" width="100%" height="1450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-          <p class="fineprint" style="margin:14px 0 0;">Prefer to open it separately? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiug1CXpJXtdxkWxHqR-E5c-WjMpgCQTZlr8ZLxQLPE94l2Q/viewform" target="_blank" rel="noopener">Open the enquiry form in a new tab ↗</a></p>
-        </div>
+        <div class="reveal"><div class="eyebrow">Your project starts here</div><h2>Tell us what you’re imagining.</h2><p class="quote-intro">A few useful details help us understand the idea. If you’re still working them out, share what you know and we’ll help shape the brief.</p><a class="button quote-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfiug1CXpJXtdxkWxHqR-E5c-WjMpgCQTZlr8ZLxQLPE94l2Q/viewform" target="_blank" rel="noopener">Fill out the enquiry form <span>↗</span></a><div class="quote-points">Individuals welcome / Organisations welcome<br>Delhi-NCR / Quote before production</div></div>
       </div>
     </section>
   </main>
