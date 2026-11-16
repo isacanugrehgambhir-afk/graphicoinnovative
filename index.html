@@ -122,6 +122,34 @@
     .service-card a span { color:var(--red); padding-left:4px; }
     .services-note { margin-top:20px; color:var(--muted); font-size:11px; }
 
+    .packages { background:#fffaf2; }
+    .package-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; align-items:stretch; }
+    .package-card { display:flex; flex-direction:column; min-width:0; padding:clamp(22px,2.6vw,34px); border:1px solid var(--line); border-radius:var(--radius); background:var(--paper); }
+    .package-card:nth-child(2) { background:#f3d782; border-color:#f3d782; }
+    .package-card:nth-child(3) { background:#dfe8eb; border-color:#dfe8eb; }
+    .package-label { color:var(--muted); font:10px 'DM Mono',monospace; letter-spacing:.12em; text-transform:uppercase; }
+    .package-card h3 { margin:17px 0 4px; font:700 clamp(23px,2.2vw,30px)/1.1 'Manrope'; letter-spacing:-.05em; }
+    .package-price { margin:0 0 17px; color:var(--red); font:700 clamp(27px,3vw,38px)/1.05 'Manrope'; letter-spacing:-.06em; }
+    .package-price small { color:var(--muted); font:500 12px 'DM Sans',sans-serif; letter-spacing:0; }
+    .package-summary { margin:0 0 20px; color:#606a72; font-size:13px; line-height:1.6; }
+    .package-list { margin:0 0 24px; padding:0; list-style:none; }
+    .package-list li { padding:10px 0; border-top:1px solid rgba(32,45,57,.15); font-size:13px; line-height:1.5; }
+    .package-list li:before { content:'↗'; margin-right:9px; color:var(--red); font-weight:700; }
+    .package-cta { margin-top:auto; }
+    .package-footnote { margin:25px 0 0; display:flex; justify-content:space-between; align-items:center; gap:18px; color:var(--muted); font-size:12px; line-height:1.55; }
+    .package-footnote a { color:var(--red); font-weight:700; white-space:nowrap; text-underline-offset:3px; }
+    .packages, .package-comparison { padding:0; background:#fff8f0; }
+    .package-artwork { position:relative; width:min(100%,1600px); margin:0 auto; line-height:0; }
+    .package-artwork img { display:block; width:100%; height:auto; }
+    .package-terms-hotspot { position:absolute; left:1%; bottom:1.1%; width:16%; height:4.2%; min-height:24px; border-radius:3px; cursor:pointer; }
+    .package-terms-hotspot:focus-visible { outline:3px solid #174a5b; outline-offset:2px; background:rgba(255,255,255,.35); }
+    .package-cta-hotspot { position:absolute; z-index:1; display:block; min-width:44px; min-height:44px; border-radius:999px; cursor:pointer; }
+    .package-cta-visualizer { left:16.55%; top:79.85%; width:10.05%; height:5.55%; }
+    .package-cta-appetizer { left:42.25%; top:84.45%; width:10.05%; height:5.75%; }
+    .package-cta-business { left:68.0%; top:80.95%; width:10.15%; height:5.55%; }
+    .package-cta-hotspot:focus-visible { outline:3px solid #174a5b; outline-offset:4px; background:rgba(255,255,255,.28); }
+    .package-artwork .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
     .story { background:var(--ink); color:#fff; }
     .story-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:80px; align-items:center; }
     .story .eyebrow { color:#f7c975; }
@@ -468,6 +496,8 @@
       .section-head { align-items:flex-start; }
       .section-head p { max-width:310px; }
       .steps { grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:25px; }
+      .package-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .package-card:last-child { grid-column:1 / -1; }
       .step { padding-right:22px; }
       .quote-grid { grid-template-columns:1fr; gap:30px; }
       .quote-intro { max-width:620px; }
@@ -498,6 +528,9 @@
       section { padding:66px 0; }
       .section-head h2 { font-size:clamp(32px,9vw,45px); }
       .service-grid { grid-template-columns:1fr; }
+      .package-grid { grid-template-columns:1fr; }
+      .package-card:last-child { grid-column:auto; }
+      .package-footnote { align-items:flex-start; flex-direction:column; }
       .service-card { min-height:220px; }
       .steps { grid-template-columns:1fr; }
       .step { padding:20px 0 0; }
@@ -563,7 +596,7 @@
       <a class="brand" href="#top" aria-label="Graphico home"><img src="assets/graphico-exact-logo.png" alt="Graphico Innovative Advertising"></a>
       <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
       <div class="navlinks">
-        <a href="#work">Selected work</a><a href="#mockups">3D mockups</a><a href="#design">Graphic design</a><a href="#printing">Digital printing</a><a href="#about">Meet the team</a>
+        <a href="#work">Selected work</a><a href="#mockups">3D mockups</a><a href="#design">Graphic design</a><a href="#printing">Digital printing</a><a href="#packages">Packages</a><a href="#about">Meet the team</a>
         <a class="button" href="#quote">Get a quote <span>↗</span></a>
       </div>
     </nav>
@@ -661,6 +694,20 @@
         <p class="services-note">We confirm artwork, material, quantity, finishing and timing with you before production.</p>
       </div>
     </section>
+    <section class="packages" id="packages" aria-label="Graphico design service packages">
+      <figure class="package-artwork">
+        <img src="assets/graphico-design-packages.jpg" alt="Creative Solutions. Structured for Your Business. Visualizer at ₹7,999 for new businesses includes logo and basic brand identity, visiting cards, letterhead, any two stationery designs, and brand guidelines. Appetizer at ₹12,999 for cafés and restaurants includes one menu up to four pages, one table tent design up to two sides, one packaging format or SKU, five static digital promotional creatives, and one additional standard collateral design. Business Elevate at ₹24,999 for established businesses and corporate clients includes basic brand guidelines, a corporate brochure up to four pages, a presentation up to ten slides using supplied content, any four stationery designs, and collateral for one event up to two designs." width="1920" height="1080" loading="lazy" decoding="async">
+        <a class="package-terms-hotspot" href="terms.html" aria-label="Terms and Conditions" title="Terms and Conditions"></a>
+        <a class="package-cta-hotspot package-cta-visualizer" href="#quote" aria-label="Get started with the Visualizer package and go to contact" title="Get started with Visualizer"></a>
+        <a class="package-cta-hotspot package-cta-appetizer" href="#quote" aria-label="Talk to Graphico about the Appetizer package" title="Talk to Graphico about Appetizer"></a>
+        <a class="package-cta-hotspot package-cta-business" href="#quote" aria-label="Get in touch about the Business Elevate package" title="Get in touch about Business Elevate"></a>
+      </figure>
+    </section>
+    <section class="package-comparison" id="package-comparison" aria-label="Compare design service packages">
+      <figure class="package-artwork">
+        <img src="assets/graphico-design-packages-compare.jpg" alt="Compare Plans. Choose the Best for You. The comparison table shows Visualizer, Appetizer, and Business Elevate inclusions: logo and basic brand identity; brand guidelines; visiting cards; letterhead; selected stationery; menu design up to four pages; table tent cards up to two sides; one packaging format or SKU; five static promotional creatives; print collateral; corporate brochure up to four pages; presentation up to ten slides using supplied content; and one event with up to two collateral designs." width="1920" height="1080" loading="lazy" decoding="async">
+      </figure>
+    </section>
     <section class="story" id="about">
       <div class="wrap story-grid">
         <div class="reveal"><div class="eyebrow">A family practice, with fresh eyes</div><h2>Craft built over 52 years.</h2><p class="story-copy">Graphico brings together 45 years of print-industry experience and 7 years of contemporary design, content and operations experience. We pair deep production knowledge with a thoughtful, connected way to work with people and organisations.</p><div class="years"><strong>45 + 7</strong><span>52 years of experience, working together on what comes next.</span></div></div>
@@ -690,7 +737,7 @@
     </section>
   </main>
   <footer>
-    <div class="wrap"><div class="footer-main"><a class="brand" href="#top"><img src="assets/graphico-footer-white.png" alt="Graphico Innovative Advertising" loading="lazy" decoding="async"></a><p class="footer-note">Design and digital print support for individuals and organisations across Delhi-NCR. Good ideas deserve to be well made.</p><div class="footer-links"><a href="#design">Services</a><a href="#about">Our story</a><a href="#quote">Get a quote</a><a href="/privacy.html">Privacy</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Graphico Innovative Advertising</span><span>Delhi-NCR / India</span><span>Delhi-NCR / India · Ideas, made tangible</span></div></div>
+    <div class="wrap"><div class="footer-main"><a class="brand" href="#top"><img src="assets/graphico-footer-white.png" alt="Graphico Innovative Advertising" loading="lazy" decoding="async"></a><p class="footer-note">Design and digital print support for individuals and organisations across Delhi-NCR. Good ideas deserve to be well made.</p><div class="footer-links"><a href="#design">Services</a><a href="#packages">Packages</a><a href="#about">Our story</a><a href="#quote">Get a quote</a><a href="privacy.html">Privacy</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Graphico Innovative Advertising</span><span>Delhi-NCR / India</span><span>Delhi-NCR / India · Ideas, made tangible</span></div></div>
   </footer>
   <script>
 
