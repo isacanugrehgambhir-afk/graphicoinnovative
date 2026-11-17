@@ -139,8 +139,16 @@
     .package-footnote { margin:25px 0 0; display:flex; justify-content:space-between; align-items:center; gap:18px; color:var(--muted); font-size:12px; line-height:1.55; }
     .package-footnote a { color:var(--red); font-weight:700; white-space:nowrap; text-underline-offset:3px; }
     .packages, .package-comparison { padding:0; background:#fff8f0; }
+    .packages { position:relative; isolation:isolate; overflow:hidden; }
+    .packages:before, .packages:after { content:""; position:absolute; z-index:0; width:min(16vw,280px); height:38%; pointer-events:none; background-image:radial-gradient(circle,rgba(208,151,132,.65) 2px,transparent 2.6px); background-size:15px 15px; }
+    .packages:before { top:0; left:0; }
+    .packages:after { right:0; bottom:0; }
     .package-comparison { background:#852d13; }
-    .package-artwork { position:relative; width:min(100%,calc((100svh - 110px) * 1.7778)); margin:0 auto; line-height:0; }
+    .package-artwork { position:relative; z-index:1; width:min(100%,calc((100svh - 110px) * 1.7778)); margin:0 auto; line-height:0; }
+    .package-dot-mask { position:absolute; z-index:1; display:block; background:#fff8f0; pointer-events:none; }
+    .package-dot-mask.top-wide { top:0; left:0; width:18%; height:20%; }
+    .package-dot-mask.top-left { top:20%; left:0; width:10%; height:22%; }
+    .package-dot-mask.bottom-right { right:0; bottom:0; width:14%; height:42%; }
     .package-artwork img { display:block; width:100%; height:auto; }
     .package-terms-hotspot { position:absolute; left:1%; bottom:1.1%; width:16%; height:4.2%; min-height:24px; border-radius:3px; cursor:pointer; }
     .package-terms-hotspot:focus-visible { outline:3px solid #174a5b; outline-offset:2px; background:rgba(255,255,255,.35); }
@@ -698,6 +706,7 @@
     <section class="packages" id="packages" aria-label="Graphico design service packages">
       <figure class="package-artwork">
         <img src="assets/graphico-design-packages.jpg" alt="Creative Solutions. Structured for Your Business. Visualizer at ₹7,999 for new businesses includes logo and basic brand identity, visiting cards, letterhead, any two stationery designs, and brand guidelines. Appetizer at ₹12,999 for cafés and restaurants includes one menu up to four pages, one table tent design up to two sides, one packaging format or SKU, five static digital promotional creatives, and one additional standard collateral design. Business Elevate at ₹24,999 for established businesses and corporate clients includes basic brand guidelines, a corporate brochure up to four pages, a presentation up to ten slides using supplied content, any four stationery designs, and collateral for one event up to two designs." width="1920" height="1080" loading="lazy" decoding="async">
+        <span class="package-dot-mask top-wide" aria-hidden="true"></span><span class="package-dot-mask top-left" aria-hidden="true"></span><span class="package-dot-mask bottom-right" aria-hidden="true"></span>
         <a class="package-terms-hotspot" href="terms.html" aria-label="Terms and Conditions" title="Terms and Conditions"></a>
         <a class="package-cta-hotspot package-cta-visualizer" href="#quote" aria-label="Get started with the Visualizer package and go to contact" title="Get started with Visualizer"></a>
         <a class="package-cta-hotspot package-cta-appetizer" href="#quote" aria-label="Talk to Graphico about the Appetizer package" title="Talk to Graphico about Appetizer"></a>
